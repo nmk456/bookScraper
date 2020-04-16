@@ -63,7 +63,7 @@ def get_books(isbn=None, title=None, author=None):
     return lib.lookup(ids)
 
 
-def download_books(md5, mirror='http://93.174.95.29/_ads/'):
+def download_books(md5, mirror='http://93.174.95.29/main/'):
     url = mirror + md5
     webpage = requests.get(url)
     soup = BeautifulSoup(webpage.content, 'html.parser')
