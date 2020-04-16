@@ -67,7 +67,7 @@ def download_books(md5, mirror='http://93.174.95.29/main/'):
     url = mirror + md5
     webpage = requests.get(url)
     soup = BeautifulSoup(webpage.content, 'html.parser')
-    link = "http://93.174.95.29" + soup.find('a', href=True, text='GET')['href']
+    link = soup.find('a', href=True, text='GET')['href']
     filename = unquote(link.split("/")[-1])
 
     r = requests.get(link, stream=True)
